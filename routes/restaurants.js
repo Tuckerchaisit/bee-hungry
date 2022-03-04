@@ -14,6 +14,8 @@ router.post('/',isLoggedIn , RestaurantsCtrl.create)
 
 router.get('/:id/edit', RestaurantsCtrl.edit)
 
+router.put('/:id', RestaurantsCtrl.update)
+
 export {
   router
 }

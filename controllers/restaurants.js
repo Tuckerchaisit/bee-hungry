@@ -54,6 +54,16 @@ function edit(req,res){
   })
 }
 
+function update(req,res){
+  req.body.visited = !!req.body.visited
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  Restaurant.findByIdAndUpdate(req.params.id, req.body, function(err, restaurant) {
+    res.redirect(`/restaurants/${restaurant._id}`)
+  })
+}
+
 
 
 export{
@@ -62,4 +72,5 @@ export{
   create,
   show,
   edit,
+  update
 }
