@@ -1,0 +1,37 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price Range</th>
+        <th>Address</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# Oh hey, this is an ejs comment! It starts with a # %>
+      <%# Write the line of EJS to iterate over movies using forEach %>
+      <% restaurants.forEach((restaurant) => { %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.priceRange %></td>
+          <td><%= restaurant.address %></td>
+          <td><a href="/restaurants/<%= restaurant._id %>">DETAILS</a></td>
+          <!-- 
+          <td>
+            <form action="/movies/<%= restaurant._id %>?_method=DELETE" method="POST">
+              <button>X</button>
+            </form>
+          </td> -->
+        </tr>
+      <%# Close the forEach using EJS here %>
+      <% }) %> 
+    </tbody>
+  </table>
+</main>
+
+  <%- include('../partials/footer') %>
