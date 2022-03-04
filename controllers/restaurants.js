@@ -77,6 +77,7 @@ function update(req,res){
 function createPrevVisits(req,res){
   req.body.owner = req.user.profile._id
   Restaurant.findById(req.params.id)
+  
   .then(restaurant=>{
     restaurant.prevVisited.push(req.body)
     restaurant.save(function(err){

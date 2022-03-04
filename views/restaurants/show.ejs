@@ -27,7 +27,7 @@
           <%= restaurant.visited ? 'Yes' : 'Nope' %>
         </div>
   </section>
-</main>
+
 
 <a href="/restaurants/<%= restaurant._id %>/edit">
   <button>Edit Restaurant</button>
@@ -43,19 +43,44 @@
     <input type="datetime-local" name="date" id="date-input">
   </label><br>
   <label>Occasion:
-    <input type="text" name="price" id="occasion-input">
+    <input type="text" name="occasion" id="occasion-input">
   </label><br>
   <label>Total Billed: $
-      <input type="text" name="price" id="total-billed-input">
+      <input type="text" name="totalBilled" id="total-billed-input">
     </label><br>
   <label>Special Notes:
-        <input type="text" name="price" id="notes-input">
+        <input type="text" name="specialNotes" id="notes-input">
   </label><br>
     <button type="submit">Submit Previous Visit</button>
   </form>
+  <% if (restaurant.prevVisited.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date: </th>
+          <th>Occasion:</th>
+          <th>Total Billed: $</th>
+          <th>Special Notes:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restaurant.prevVisited.forEach(function(visit) { %>
+          <tr>
+            <td><%= visit.date %></td>
+            <td><%= visit.occasion %></td>
+            <td><%= visit.totalBilled %></td>
+            <td><%= visit.specialNotes %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Record of Previous Visit Yet</h3>
+  <% } %>
+
 <% } %> 
 
-
+</main>
 
 
 
