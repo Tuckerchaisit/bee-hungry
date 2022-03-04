@@ -33,6 +33,29 @@
   <button>Edit Restaurant</button>
 </a>
 
+<% if(restaurant.visited===true){ %> 
+  <form 
+    id="add-prev-visit-form"
+    action="/restaurants/<%= restaurant._id %>/prevVisits"
+    method="POST"
+  >
+  <label>Date:
+    <input type="datetime-local" name="date" id="date-input">
+  </label><br>
+  <label>Occasion:
+    <input type="text" name="price" id="occasion-input">
+  </label><br>
+  <label>Total Billed: $
+      <input type="text" name="price" id="total-billed-input">
+    </label><br>
+  <label>Special Notes:
+        <input type="text" name="price" id="notes-input">
+  </label><br>
+    <button type="submit">Submit Previous Visit</button>
+  </form>
+<% } %> 
+
+
 
 
 

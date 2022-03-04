@@ -11,6 +11,7 @@ router.get('/new', RestaurantsCtrl.new)
 router.get('/:id', RestaurantsCtrl.show)
 
 router.post('/',isLoggedIn , RestaurantsCtrl.create)
+router.post('/:id/prevVisits', RestaurantsCtrl.createPrevVisits)
 
 router.get('/:id/edit', RestaurantsCtrl.edit)
 

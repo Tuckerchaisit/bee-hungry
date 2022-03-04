@@ -41,10 +41,16 @@ function show(req,res){
       title: 'Restaurant Detail', 
       restaurant: restaurant
     })
+    
+  })
+  .catch(err=>{
+    console.log(err);
+    res.redirect('/restaurants')
   })
 }
 
 function edit(req,res){
+  req.body.owner = req.user.profile._id
   Restaurant.findById(req.params.id)
   .then(restaurant=>{
     res.render('restaurants/edit',{
@@ -52,9 +58,14 @@ function edit(req,res){
       title: 'Edit Restaurant'
     })
   })
+  .catch(err=>{
+    console.log(err);
+    res.redirect('/restaurants')
+  })
 }
 
 function update(req,res){
+  req.body.owner = req.user.profile._id
   req.body.visited = !!req.body.visited
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
@@ -63,7 +74,16 @@ function update(req,res){
     res.redirect(`/restaurants/${restaurant._id}`)
   })
 }
-
+function createPrevVisits(req,res){
+  req.body.owner = req.user.profile._id
+  Restaurant.findById(req.params.id)
+  .then(restaurant=>{
+    restaurant.prevVisited.push(req.body)
+    restaurant.save(function(err){
+      res.redirect(`/restaurants/${restaurant._id}`)
+    })
+  })
+}
 
 
 export{
@@ -72,5 +92,6 @@ export{
   create,
   show,
   edit,
-  update
+  update,
+  createPrevVisits
 }
