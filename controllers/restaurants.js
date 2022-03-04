@@ -38,7 +38,7 @@ function show(req,res){
   .populate("owner")
   .then(restaurant=>{
     res.render('restaurants/show',{
-      title, 
+      title: 'Restaurant Detail', 
       restaurant: restaurant
     })
   })
