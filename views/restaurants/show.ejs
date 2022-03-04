@@ -1,7 +1,37 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<main>
+  <h1>
+    <%= title %>
+  </h1>
+  <section>
+    <div>Name: </div>
+        <div>
+          <%= restaurant.name %>
+        </div>
+        <div>Price Range: </div>
+        <div>
+          <%= restaurant.priceRange %>
+        </div>
+        <div>Address: </div>
+        <div>
+          <%= restaurant.address %>
+        </div>
+        <div>Cuisine: </div>
+        <div>
+          <%= restaurant.cuisine %>
+        </div>
+        <div>Visited: </div>
+        <div>
+          <%= restaurant.visited ? 'Yes' : 'Nope' %>
+        </div>
+  </section>
+</main>
 
+<a href="/restaurants/<%= restaurant._id %>/edit">
+  <button>Edit Restaurant</button>
+</a>
 
 
 
