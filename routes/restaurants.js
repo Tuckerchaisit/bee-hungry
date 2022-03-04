@@ -12,6 +12,8 @@ router.get('/:id', RestaurantsCtrl.show)
 
 router.post('/',isLoggedIn , RestaurantsCtrl.create)
 
+router.get('/:id/edit', RestaurantsCtrl.edit)
+
 export {
   router
 }

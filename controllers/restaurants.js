@@ -44,6 +44,16 @@ function show(req,res){
   })
 }
 
+function edit(req,res){
+  Restaurant.findById(req.params.id)
+  .then(restaurant=>{
+    res.render('restaurants/edit',{
+      restaurant,
+      title: 'Edit Restaurant'
+    })
+  })
+}
+
 
 
 export{
@@ -51,4 +61,5 @@ export{
   newRestaurant as new,
   create,
   show,
+  edit,
 }
