@@ -87,6 +87,7 @@ function createPrevVisits(req,res){
 }
 
 function deleteRestaurant(req,res){
+  req.body.owner = req.user.profile._id
   Restaurant.findByIdAndDelete(req.params.id)
   .then(res.redirect('/restaurants'))
 }
