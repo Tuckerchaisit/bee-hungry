@@ -15,6 +15,8 @@ router.post('/:id/prevVisits', RestaurantsCtrl.createPrevVisits)
 
 router.get('/:id/edit', RestaurantsCtrl.edit)
 
+router.delete('/:id', RestaurantsCtrl.delete)
+
 router.put('/:id', RestaurantsCtrl.update)
 
 export {

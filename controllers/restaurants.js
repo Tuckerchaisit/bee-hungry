@@ -86,6 +86,10 @@ function createPrevVisits(req,res){
   })
 }
 
+function deleteRestaurant(req,res){
+  Restaurant.findByIdAndDelete(req.params.id)
+  .then(res.redirect('/restaurants'))
+}
 
 export{
   index,
@@ -94,5 +98,6 @@ export{
   show,
   edit,
   update,
-  createPrevVisits
+  createPrevVisits,
+  deleteRestaurant as delete,
 }

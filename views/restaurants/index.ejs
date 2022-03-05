@@ -21,12 +21,11 @@
           <td><%= restaurant.priceRange %></td>
           <td><%= restaurant.address %></td>
           <td><a href="/restaurants/<%= restaurant._id %>">DETAILS</a></td>
-          <!-- 
           <td>
-            <form action="/movies/<%= restaurant._id %>?_method=DELETE" method="POST">
+            <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
               <button>X</button>
             </form>
-          </td> -->
+          </td>
         </tr>
       <%# Close the forEach using EJS here %>
       <% }) %> 
