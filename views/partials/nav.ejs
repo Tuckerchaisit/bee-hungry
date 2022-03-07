@@ -5,7 +5,9 @@
 <body>
   <nav>
     <a href="/restaurants">All Restaurants</a>
+    <% if (user) { %>
     <a href="/restaurants/new">Add Restaurant</a>
+    <% } %>
     <% if (user) { %>
       <a href="/auth/logout">
         <button type="submit">Logout</button>

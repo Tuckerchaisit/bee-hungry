@@ -1,6 +1,7 @@
 import { Restaurant } from "../models/restaurant.js";
 
 function index(req,res){
+  // req.body.owner = req.user.profile._id
   Restaurant.find({})
   .then(restaurants =>{
     res.render('restaurants/index',{
@@ -15,6 +16,7 @@ function index(req,res){
 }
 
 function newRestaurant(req,res){
+  req.body.owner = req.user.profile._id
   res.render('restaurants/new',{
     title: 'Add Restaurant'
   })
@@ -34,6 +36,7 @@ function create(req,res){
 }
 
 function show(req,res){
+  req.body.owner = req.user.profile._id
   Restaurant.findById(req.params.id)
   .populate("owner")
   .then(restaurant=>{
@@ -53,10 +56,14 @@ function edit(req,res){
   req.body.owner = req.user.profile._id
   Restaurant.findById(req.params.id)
   .then(restaurant=>{
+    if (restaurant.owner.equals(req.user.profile._id)) {
     res.render('restaurants/edit',{
       restaurant,
       title: 'Edit Restaurant'
     })
+  }else{
+    res.redirect('/restaurants')
+  }
   })
   .catch(err=>{
     console.log(err);
@@ -66,13 +73,19 @@ function edit(req,res){
 
 function update(req,res){
   req.body.owner = req.user.profile._id
+  
   req.body.visited = !!req.body.visited
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
   Restaurant.findByIdAndUpdate(req.params.id, req.body, function(err, restaurant) {
-    res.redirect(`/restaurants/${restaurant._id}`)
+    if (restaurant.owner.equals(req.user.profile._id)) {
+    res.redirect(`/restaurants/${restaurant._id}`)}
+    else{
+      res.redirect('/restaurants')
+    }
   })
+  
 }
 function createPrevVisits(req,res){
   req.body.owner = req.user.profile._id
