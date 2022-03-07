@@ -15,9 +15,9 @@ main{
   margin: 40px auto;
 }
 
-/* h1{
+h1{
   padding: 20px 0 10px 0;
-} */
+}
 #card-container{
   padding: 0;
   margin: 0px;
@@ -55,10 +55,11 @@ main{
 }
 .card-footer{
   display: flex;
-  margin-top: 180px;
+  /* margin-top: 180px; */
   justify-content: center;
   align-items: center;
-  /* align-items: baseline; */
+  
+
 }
 
 /* .restaurant-bg {
