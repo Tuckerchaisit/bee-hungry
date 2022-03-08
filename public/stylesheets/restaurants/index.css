@@ -16,7 +16,6 @@ h1{
   background-color: #FAE588;
   border-radius: 20px;
   margin: 10px 15px;
-  /* padding: 0 10px; */
 }
 
 .card-base:hover {
@@ -24,10 +23,11 @@ h1{
   height: 300px;
   background-color: #f9eaaa;
   border-radius: 20px;
-  animation: pulse 0.8s;
+  animation: pulse 1.2s;
 }
 
 .card-title{
+  margin-top: 10px;
   font-size: 1.5rem;
   text-align: left;
   padding: 0 5px;
@@ -37,19 +37,29 @@ h1{
   text-align: left;
   padding: 0 5px;
 }
-.card-footer{
-  display: flex;
-  /* margin-top: 180px; */
-  justify-content: center;
-  align-items: center;
+.detail-btn{
+  font-size: 0.9rem; 
+  text-align: left;
+  padding: 0 5px;
+  color:#8c7c34;
+  border:none;
+  background-color: transparent; 
+  text-decoration: underline;
+}
+.detail-btn:hover{
+  color:rgb(254, 254, 215);
+}
+.card-detail{
+  margin: 0 115px 0 0;
 }
 
-/* .restaurant-bg {
-  width: px;
-  height: px;
+
+.restaurant-bg {
+  width: 170px;
+  height: 150px;
   position: relative;
   z-index: 1;
-} */
+}
 
 #log-in:hover {
   background-color: var(--log-in-hover-bg-color);
@@ -84,4 +94,52 @@ h1{
   background-color: var(--log-out-hover-bg-color);
   color: var(--log-out-hover-color);
   cursor: pointer;
+}
+
+.dlt-btn{
+  background-color: transparent;
+  border: none;
+  color: rgb(254, 254, 215);
+  font-size: 1.5rem;
+  margin: 5px 0 0 130px;
+  
+}
+
+.dlt-btn:hover{
+  color: rgb(252, 94, 94)
+}
+
+@media only screen and (min-width: 800px) {
+  h1{
+    font-size: 6rem;
+  }
+  .card-base {
+    width: 200px;
+    height: 300px;
+    background-color: #FAE588;
+    border-radius: 20px;
+    margin: 10px 15px;
+    /* padding: 0 10px; */
+  }
+  
+  .card-base:hover {
+    width: 200px;
+    height: 300px;
+    background-color: #f9eaaa;
+    border-radius: 20px;
+    animation: pulse 1.2s;
+  }
+
+  .restaurant-bg {
+    width: 200px;
+    height: 160px;
+    position: relative;
+    z-index: 1;
+  }
+  .dlt-btn{
+    margin: 5px 0 0 160px;
+  }
+  .card-detail{
+    margin: 0 148px 0 0;
+  }
 }

@@ -50,4 +50,8 @@ h1 {
   main{
     width: 750px;
   }
+
+  h1{
+    font-size: 6rem;
+  }
 }

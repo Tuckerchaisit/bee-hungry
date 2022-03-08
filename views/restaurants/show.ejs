@@ -18,11 +18,12 @@
         </div>
       </section>
 
-
+      <% if (restaurant.owner.equals(user?.profile._id)) { %>
       <a href="/restaurants/<%= restaurant._id %>/edit">
         <button>Edit Restaurant</button>
       </a>
-
+      <% } %> 
+      
       <% if(restaurant.visited===true){ %>
         <form id="add-prev-visit-form" action="/restaurants/<%= restaurant._id %>/prevVisits" method="POST">
           <label>Date:
