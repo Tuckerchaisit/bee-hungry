@@ -42,7 +42,7 @@
   width: 1px;
 }
 
-.hvr-grow {
+/* .hvr-grow {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -56,4 +56,4 @@
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-}
+} */
