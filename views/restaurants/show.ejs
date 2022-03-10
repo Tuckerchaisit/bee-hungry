@@ -5,6 +5,8 @@
       <h1>
         <%= title %>
       </h1>
+      <section id="show-container"></section>
+      <img src="<%=restaurant.cover%>" alt="">
       <section>
         <div>Name: <%= restaurant.name %>
         </div>
@@ -16,13 +18,14 @@
         </div>
         <div>Visited: <%= restaurant.visited ? 'Yes' : 'Nope' %>
         </div>
+        <% if (restaurant.owner.equals(user?.profile._id)) { %>
+          <a href="/restaurants/<%= restaurant._id %>/edit">
+            <button>Edit Restaurant</button>
+          </a>
+          <% } %> 
       </section>
 
-      <% if (restaurant.owner.equals(user?.profile._id)) { %>
-      <a href="/restaurants/<%= restaurant._id %>/edit">
-        <button>Edit Restaurant</button>
-      </a>
-      <% } %> 
+      
       
       <% if(restaurant.visited===true){ %>
         <form id="add-prev-visit-form" action="/restaurants/<%= restaurant._id %>/prevVisits" method="POST">

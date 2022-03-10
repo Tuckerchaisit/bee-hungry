@@ -21,6 +21,7 @@ Desktop:
 ***
 ### Technologies Used
 • Mongoose </br>
+• Node.js </br>
 • Google Oauth </br>
 • HTML </br>
 • CSS </br>

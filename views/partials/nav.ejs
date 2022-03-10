@@ -24,7 +24,9 @@
       <li><a href="/restaurants/new" >Add Restaurant</a></li>
       <% } %>
       <% if (user) { %>
-      <li><a href="/auth/logout" type="submit">Logout</a></li>
+      <li>
+        <a href="/auth/logout" type="submit">Logout</a>
+      </li>
       <% } else { %>
         <li><a href="/auth/google" class="siwg-link">
           <button type="submit" class="siwg">
@@ -32,6 +34,7 @@
           </button>
         </a></li>
         <% } %> 
+        
     </ul>
   </nav>
   <label for="nav-toggle" class="nav-toggle-label">
