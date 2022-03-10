@@ -21,6 +21,7 @@ const restaurantSchema = new Schema({
   address: String,
   cuisine: String,
   visited: Boolean,
+  cover: String,
   prevVisited: [prevVisitSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 },{

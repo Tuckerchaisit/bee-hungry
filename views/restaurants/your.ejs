@@ -9,6 +9,7 @@
       </h1>
       <section id="card-container" class="animate__animated">
         <% restaurants.forEach((restaurant)=> { %>
+          <% if (restaurant.owner.equals(user?.profile._id)) { %>
           <div class="card-base" id="restaurant-layout">
             <small class="delete-btn">
               <% if (restaurant.owner.equals(user?.profile._id)) { %>
@@ -37,6 +38,7 @@
             </h4>
             <% } %>
           </div>
+          <% } %>
           <% }) %>
       </section>
 

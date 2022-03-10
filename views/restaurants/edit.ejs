@@ -3,6 +3,7 @@
 
 <main>
   <h1><%= title %></h1>
+  <section class="body">
   <form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" name="name" value="<%= restaurant.name %>" id="name-input">
@@ -19,8 +20,11 @@
     <input type="text" name="cuisine" value="<%= restaurant.cuisine %>" id="cuisine-input">
     <label for="visited-checkbox">Visited:</label>
     <input type="checkbox" name="visited" <%= restaurant.visit ? 'checked' : '' %> id="visited-checkbox">
+    <label for="cover-input">Photo URL:</label>
+    <input type="text" name="cover" value="<%= restaurant.cover %>" id="cover-input">
     <button type="submit">Save Restaurant</button>
   </form>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

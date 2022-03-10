@@ -18,6 +18,9 @@
       <li><a href="/">Home</a></li>
       <li><a href="/restaurants" >All Restaurants</a></li>
       <% if (user) { %>
+      <li><a href="/restaurants/your" >Your Restaurants</a></li>
+      <% } %>
+      <% if (user) { %>
       <li><a href="/restaurants/new" >Add Restaurant</a></li>
       <% } %>
       <% if (user) { %>

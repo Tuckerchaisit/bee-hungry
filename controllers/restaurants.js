@@ -14,6 +14,21 @@ function index(req,res){
     res.redirect('/restaurants')
   })
 }
+function your(req,res){
+  req.body.owner = req.user.profile._id
+  Restaurant.find({})
+  .then(restaurants =>{
+    res.render('restaurants/your',{
+      restaurants,
+      title: 'Your Restaurants'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/restaurants')
+  })
+}
+
 
 function newRestaurant(req,res){
   req.body.owner = req.user.profile._id
@@ -114,4 +129,5 @@ export{
   update,
   createPrevVisits,
   deleteRestaurant as delete,
+  your,
 }

@@ -16,7 +16,7 @@ html {
 /* resets font size to be 62.5% of the user preference - in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%;
-  --background: rgb(252, 239, 180, 1);
+  --background: rgb(252, 239, 180, .98);
 }
 
 
@@ -36,6 +36,10 @@ header{
   padding: 10px 0;
   max-width: 200px; 
   max-height: 80px; 
+ }
+
+ .logo:hover{
+   opacity:.7;
  }
  
 .nav-toggle{
@@ -106,10 +110,11 @@ nav li{
 nav a{
   color:#a58c19;
   text-decoration:none;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-transform: uppercasse;
   opacity:0;
   transition: opacity 150ms ease-in-out ;
+  font-family: 'Montserrat', sans-serif;
 }
 
 nav a:hover{
@@ -140,8 +145,9 @@ main {
   min-height: 100vh;
   text-align: center;
   background-color: #fcf3cf;
-  padding-top: 15px;
-  margin: 40px auto;
+  padding-top: 0px;
+  margin: 105px auto;
+  border-radius: 5%;
 }
 
 h1 {
@@ -202,7 +208,7 @@ h1 {
     right: 0;
     transform: scale(0,1);
     transform-origin: left;
-    transition: transform ease-in-out 250ms;
+    transition: transform ease-in-out 450ms;
   }
   nav a:hover::before{
     transform: scale(1,1);
