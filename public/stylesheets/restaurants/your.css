@@ -1,0 +1,15 @@
+.card-base{
+  background-color: whitesmoke;
+  box-shadow: 0px 2px 2px 2px #dacc8c90;
+}
+.card-base:hover{
+  background-color: #fcf5d7;
+  box-shadow: 0px 2px 2px 2px #bfb586;
+}
+.dlt-btn{
+  color: #8c7c34;
+}
+
+.restaurant-bg{
+  box-shadow: 0px 4px 2px 2px #917f2e97;
+}

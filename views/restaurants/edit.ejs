@@ -1,28 +1,28 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
+<link rel="stylesheet" href="/stylesheets/restaurants/new.css" />
 <main>
-  <h1><%= title %></h1>
+  <h1 id="title"><%= title %></h1>
   <section class="body">
   <form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
-    <input type="text" name="name" value="<%= restaurant.name %>" id="name-input">
+    <input type="text" name="name" value="<%= restaurant.name %>" id="name-input"><br>
     <label for="price-range-select">Price Range:</label>
     <select name="priceRange" value="<%= restaurant.priceRange %>" id="price-range-select">
       <option value="$">$</option>
       <option value="$$">$$</option>
       <option value="$$$">$$$</option>
       <option value="$$$$">$$$$</option>
-    </select>
+    </select><br>
     <label for="address-input">Address:</label>
-    <input type="text" name="address" value="<%= restaurant.address %>" id="address-input">
+    <input type="text" name="address" value="<%= restaurant.address %>" id="address-input"><br>
     <label for="cuisine-input">Cuisine:</label>
-    <input type="text" name="cuisine" value="<%= restaurant.cuisine %>" id="cuisine-input">
+    <input type="text" name="cuisine" value="<%= restaurant.cuisine %>" id="cuisine-input"><br>
     <label for="visited-checkbox">Visited:</label>
-    <input type="checkbox" name="visited" <%= restaurant.visit ? 'checked' : '' %> id="visited-checkbox">
+    <input type="checkbox" name="visited" <%= restaurant.visit ? 'checked' : '' %> id="visited-checkbox"><br>
     <label for="cover-input">Photo URL:</label>
-    <input type="text" name="cover" value="<%= restaurant.cover %>" id="cover-input">
-    <button type="submit">Save Restaurant</button>
+    <input type="text" name="cover" value="<%= restaurant.cover %>" id="cover-input"><br>
+    <button type="submit" id="submit-btn">Save Restaurant</button>
   </form>
   </section>
 </main>

@@ -1,6 +1,98 @@
 #title{
   font-family: 'Montserrat', sans-serif;
-  padding-top: 20px;
+  padding-top: 30px;
+  letter-spacing: 2.2px;
+}
+.body{
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  margin-left:21.5%;
+}
+
+#name-input{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  margin-left: 7px;
+  width: 52%;
+}
+#name-input:hover{
+  background-color: whitesmoke;
+  box-shadow:0 0 10px 4px rgba(255, 233, 143, 0.503);
+}
+#price-range-select{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  text-align: center;
+  margin-left: 7px;
+  width: 37.5%;
+  cursor: pointer;
+}
+#price-range-select:hover{
+  background-color: whitesmoke;
+  box-shadow:0 0 10px 4px rgba(255, 233, 143, 0.503);
+}
+#address-input{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  margin-left: 7px;
+  width: 47.3%;
+}
+#address-input:hover{
+  background-color: whitesmoke;
+  box-shadow:0 0 10px 4px rgba(255, 233, 143, 0.503);
+}
+#cuisine-input{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  margin-left: 7px;
+  width: 49%;
+}
+#cuisine-input:hover{
+  background-color: whitesmoke;
+  box-shadow:0 0 10px 4px rgba(255, 233, 143, 0.503);
+}
+#visited-checkbox{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  margin-left: 13.5px;
+  cursor: pointer;
+}
+#cover-input{
+  margin-bottom: 10px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  margin-left: 7px;
+  width: 40.3%;
+}
+#cover-input:hover{
+  background-color: whitesmoke;
+  box-shadow:0 0 10px 4px rgba(255, 233, 143, 0.503);
+}
+#submit-btn{
+  margin-top: 15px;
+  border-radius: 7px;
+  border: 1px solid #a58c19;
+  width: 72%;
+  height: 30px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+#submit-btn:hover{
+  background-color: #f9dc5c;
+}
+
+@media only screen and (min-width: 800px) {
+
+#title{
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 30px;
   letter-spacing: 2.8px;
 }
 .body{
@@ -86,4 +178,5 @@
 }
 #submit-btn:hover{
   background-color: #f9dc5c;
+}
 }
