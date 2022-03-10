@@ -1,8 +1,11 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/index.css" />
 
 <main>
-  <h1>Hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>WELCOME TO BeeHUNGRY</h1>
+  
+  
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -11,6 +14,7 @@
       />
     </div>
   <% } %>
+  <h1>Signed in as: <%= user ? user.profile.name : "Not yet, Please sign in" %></h1>
 </main>
 
 <%- include('./partials/footer') %>
