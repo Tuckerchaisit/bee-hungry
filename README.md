@@ -7,7 +7,7 @@
 Link: https://bee-hungry.herokuapp.com
 *** 
 ### Overview
-BeeHungry is a restaurant tracker app that helps you and your friends keep track of your favorite restaurants. BeeHungry can also help you stay on radar for a spot on your next night out!
+BeeHungry is an app that keeps track of you and your friends' favorite restaurants. Not sure where to eat ? BeeHungry can help by keeping your favorite restaurants on your radar for your next night out!
 
 ***
 ### Wireframe

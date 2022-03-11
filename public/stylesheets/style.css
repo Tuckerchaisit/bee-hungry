@@ -58,7 +58,8 @@ header{
   margin-left: 1em;
   height: 100%;
   display:flex;
-  align-items: center;;
+  align-items: center;
+  cursor: pointer;
 }
 
 .nav-toggle-label span,
@@ -70,6 +71,7 @@ header{
   width:3em;
   border-radius: 2px;
   position: relative;
+  
 }
 .nav-toggle-label span::before,
 .nav-toggle-label span::after{
