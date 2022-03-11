@@ -1,79 +1,84 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/restaurants/show.css" />
   <%- include('../partials/nav') %>
 
     <main>
-      <h1>
-        <%= title %>
+      <h1 id="head-title">
+        <%= restaurant.name %>
       </h1>
       <section id="show-container"></section>
-      <img src="<%=restaurant.cover%>" alt="">
-      <section>
-        <div>Name: <%= restaurant.name %>
+      <img src="<%=restaurant.cover%>" alt="" class="rest-cover-photo">
+      <section id="content-container">
+        <div class="content-info">Name: <%= restaurant.name %>
         </div>
-        <div>Price Range: <%= restaurant.priceRange %>
+        <div class="content-info">Price Range: <%= restaurant.priceRange %>
         </div>
-        <div>Address: <%= restaurant.address %>
+        <div class="content-info ">Address: <h5 class="address"><%= restaurant.address %></h5>
         </div>
-        <div>Cuisine: <%= restaurant.cuisine %>
+        <div class="content-info">Cuisine: <%= restaurant.cuisine %>
         </div>
-        <div>Visited: <%= restaurant.visited ? 'Yes' : 'Nope' %>
+        <div class="content-info">Visited: <%= restaurant.visited ? 'Yes' : 'Nope' %>
         </div>
         <% if (restaurant.owner.equals(user?.profile._id)) { %>
           <a href="/restaurants/<%= restaurant._id %>/edit">
-            <button>Edit Restaurant</button>
+            <button id="edit-button">Edit Restaurant</button>
           </a>
           <% } %> 
       </section>
 
       
-      
+      <hr id="line-break">
       <% if(restaurant.visited===true){ %>
-        <form id="add-prev-visit-form" action="/restaurants/<%= restaurant._id %>/prevVisits" method="POST">
-          <label>Date:
-            <input type="datetime-local" name="date" id="date-input">
-          </label><br>
-          <label>Occasion:
-            <input type="text" name="occasion" id="occasion-input">
-          </label><br>
-          <label>Total Billed: $
-            <input type="text" name="totalBilled" id="total-billed-input">
-          </label><br>
-          <label>Special Notes:
-            <input type="text" name="specialNotes" id="notes-input">
-          </label><br>
-          <button type="submit">Submit Previous Visit</button>
-        </form>
+        <section id="visit-container">
+          <form id="add-prev-visit-form" action="/restaurants/<%= restaurant._id %>/prevVisits" method="POST">
+            <label>Date:
+              <input type="datetime-local" name="date" id="date-input">
+            </label><br>
+            <label>Occasion:
+              <input type="text" name="occasion" id="occasion-input">
+            </label><br>
+            <label>Total Billed: $
+              <input type="text" name="totalBilled" id="total-billed-input">
+            </label><br>
+            <label>Special Notes:
+              <input type="text" name="specialNotes" id="notes-input">
+            </label><br>
+            <button type="submit" id="submit-button">Submit Previous Visit</button>
+          </form>
+        </section>
         <% if (restaurant.prevVisited.length) { %>
-          <table>
+          <table id="table-visit">
             <thead>
               <tr>
-                <th>Date: </th>
-                <th>Occasion:</th>
-                <th>Total Billed: $</th>
-                <th>Special Notes:</th>
+                <th>Date and Time: </th>
+                <th class="table-header">Occasion:</th>
+                <th class="table-header">Total Billed: $</th>
+                <th class="table-header">Special Notes:</th>
               </tr>
             </thead>
             <tbody>
-              <% restaurant.prevVisited.forEach(function(visit) { %>
-                <tr>
-                  <td>
-                    <%= visit.date %>
-                  </td>
-                  <td>
-                    <%= visit.occasion %>
-                  </td>
-                  <td>
-                    <%= visit.totalBilled %>
-                  </td>
-                  <td>
-                    <%= visit.specialNotes %>
-                  </td>
-                </tr>
-                <% }) %>
+              
+                <% restaurant.prevVisited.forEach(function(visit) { %>
+                  <tr>
+                    <td id="visit-date" >
+                      <%= visit.date %>
+                    </td>
+                    <td class="table-value">
+                      <%= visit.occasion %>
+                    </td>
+                    <td class="table-value">
+                      <%= visit.totalBilled %>
+                    </td>
+                    <td class="table-value">
+                      <%= visit.specialNotes %>
+                    </td>
+                  </tr>
+                  <% }) %>
+              
             </tbody>
           </table>
           <% } else { %>
-            <h3>No Record of Previous Visit Yet</h3>
+            <h3 id="no-record">No Record of Previous Visit Yet</h3>
             <% } %>
 
               <% } %>
