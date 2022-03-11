@@ -27,6 +27,7 @@ Desktop:</br>
 • CSS </br>
 • JavaScript </br>
 • Git </br>
+• EJS </br>
 • Animate.css
 ***
 ### ERD
