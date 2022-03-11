@@ -14,10 +14,10 @@ BeeHungry is an app that keeps track of you and your friends' favorite restauran
 ![imgur](https://i.imgur.com/7f9SQ8Q.png)
 ***
 ### Display
-Mobile:
-![imgur](https://i.imgur.com/6PgVhNV.png)
-Desktop:
-![imgur](https://i.imgur.com/vKorkLd.png)
+Mobile:</br>
+![imgur](https://i.imgur.com/6PgVhNV.png)</br>
+Desktop:</br>
+![imgur](https://i.imgur.com/vKorkLd.png)</br>
 ***
 ### Technologies Used
 • Mongoose </br>
